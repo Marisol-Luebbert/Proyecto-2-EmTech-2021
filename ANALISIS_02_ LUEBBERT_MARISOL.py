@@ -365,3 +365,58 @@ lista_general_2020 = porcentaje_general(year_2020)
 print("PAISES CON GANANCIAS GENERALES 2020")
 print(["País origen","% del total","# de convenios"])
 print(*lista_general_2020, sep = "\n")
+
+#Vamos a generar una gráfica de los porcentajes de ganancias por país, por año
+fig, ax = plt.subplots(figsize = (9, 8))
+years = ['2015', '2016', '2017', '2018', '2019', '2020']
+paises = {'Japan':[20.58, 1.1, 9.37, 10.03, 9.4, 6.26], 
+          'China':[14.12, 12.55, 20.39, 23.97, 25.9, 25.66],
+          'USA':[13.0, 7.71, 11.19, 12.23, 10.52, 11.07],
+          'France':[9.81, 16.37, 5.72, 12.65, 12.12, 0.0],
+          'Netherlands':[7.48, 0.0, 0.0, 0.96, 1.81, 1.76],
+          'South Korea':[6.83, 9.13, 10.08, 7.98, 10.67, 6.63],
+          'Mexico':[5.59, 0.52, 0.12, 5.92, 1.37, 3.35],
+          'Germany':[4.06, 13.95, 18.66, 4.83, 2.5, 1.52],
+          'Italy':[4.04, 10.73, 3.63, 1.84, 0.0, 0.0],
+          'Singapore':[3.43, 2.6, 0.0, 0.0, 1.82, 3.43],
+          'Canada':[2.61, 2.93, 3.17, 0.88, 3.12, 17.0],
+          'Malaysia':[2.51, 1.66, 2.8, 0.0, 0.4, 2.8],
+          'Spain':[1.48, 5.77, 0.03, 1.21, 2.65, 6.4],
+          'Australia':[1.45, 3.59, 0.56, 0.66, 0.79, 0.51],
+          'Brazil':[1.16, 2.78, 2.79, 0.36, 0.34, 0.68],
+          'India':[1.09, 1.77, 1.98, 2.42, 0.33, 0.0],
+          'Russia':[0.75, 6.82, 7.58, 7.02, 8.69, 7.18],
+          'United Kingdom':[0.0, 0.0, 0.72, 0.0, 3.39, 3.47],
+          'Belgium':[0.0, 0.0, 1.21, 3.97, 1.71, 0.0],
+          'Austria':[0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+          'Switzerland':[0.0, 0.0, 0.0, 3.07, 2.47, 0.0],
+          'Vietnam':[0.0, 0.0, 0.0, 0.0, 0.0, 1.35],
+          'United Arab Emirates':[0, 0, 0, 0, 0, 0.93]}
+ax.plot(years, paises['Japan'], label = 'Japan')
+ax.plot(years, paises['China'], label = 'China')
+ax.plot(years, paises['USA'], label = 'USA')
+ax.plot(years, paises['France'], label = 'France')
+ax.plot(years, paises['Netherlands'], label = 'Netherlands')
+ax.plot(years, paises['South Korea'], label = 'South Korea')
+ax.plot(years, paises['Mexico'], label = 'Mexico')
+ax.plot(years, paises['Germany'], label = 'Germany')
+ax.plot(years, paises['Italy'], label = 'Italy')
+ax.plot(years, paises['Singapore'], label = 'Singapore')
+ax.plot(years, paises['Canada'], label = 'Canada')
+ax.plot(years, paises['Malaysia'], label = 'Malaysia')
+ax.plot(years, paises['Spain'], label = 'Spain')
+ax.plot(years, paises['Australia'], label = 'Australia')
+ax.plot(years, paises['Brazil'], label = 'Brazil')
+ax.plot(years, paises['India'], label = 'India')
+ax.plot(years, paises['Russia'], label = 'Russia')
+ax.plot(years, paises['United Kingdom'], label = 'United Kingdom')
+ax.plot(years, paises['Belgium'], label = 'Belgium')
+ax.plot(years, paises['Austria'], label = 'Austria')
+ax.plot(years, paises['Switzerland'], label = 'Switzerland')
+ax.plot(years, paises['Vietnam'], label = 'Vietnam')
+ax.plot(years, paises['United Arab Emirates'], label = 'United Arab Emirates')
+ax.legend(loc="upper left",ncol=3,fontsize = 'small')
+ax.set_title("Porcentaje de ganancias por pais de origen")
+ax.set_xlabel("Año")
+ax.set_ylabel("Porcentaje de ganancias")
+plt.show()
